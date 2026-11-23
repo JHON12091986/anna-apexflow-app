@@ -25,3 +25,6 @@ def run_workflow(request: WorkflowRequest):
         "parameters_received": request.parameters
     }
     return result
+@app.get("/health")
+def health_check():
+    return {"status": "ok", "service": "apexflow-automator"}
